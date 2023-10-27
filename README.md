@@ -14,7 +14,12 @@
 - Prisma
 - Typescript
 
-[Visit site](https://next13-reminder.vercel.app)
+<!-- [Visit site](https://next13-reminder.vercel.app) -->
+
+
+### How does this work
+
+![](demo.gif)
 
 ----------------------
 
