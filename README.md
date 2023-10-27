@@ -20,7 +20,7 @@
 
 ### How does this work
 
-![](./public/demo.gif)
+![](./app/demo.gif)
 ---
 
 ##### Contact with me:  
