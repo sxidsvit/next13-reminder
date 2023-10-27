@@ -20,7 +20,7 @@
 
 ### How does this work
 
-![](/app/demo.gif)
+![](/https://github.com/sxidsvit/next13-reminder/blob/main/app/demo.gif)
 ---
 
 ##### Contact with me:  
