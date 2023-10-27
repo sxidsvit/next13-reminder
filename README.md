@@ -18,11 +18,6 @@
 
 ----------------------
 
-### How does this work
-
-![](/https://github.com/sxidsvit/next13-reminder/blob/main/app/demo.gif)
----
-
 ##### Contact with me:  
 [<img alt="webDev | LinkedIn" src="https://img.shields.io/badge/linkedin-0077B5.svg?&style=for-the-badge&logo=linkedin&logoColor=white" />][linkedin]
 
