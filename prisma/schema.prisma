@@ -5,9 +5,17 @@ generator client {
   provider = "prisma-client-js"
 }
 
+// This case for local sqlite database
+
+// datasource db {
+//   provider = "sqlite"
+//   url      = env("DATABASE_URL")
+// }
+
 datasource db {
-  provider = "sqlite"
-  url      = env("DATABASE_URL")
+  provider = "postgresql"
+  url = env("POSTGRES_PRISMA_URL") // uses connection pooling
+  directUrl = env("POSTGRES_URL_NON_POOLING") // uses a direct connection
 }
 
 model Collection {
@@ -32,4 +40,34 @@ model Task {
 
   collectionId Int
   Collection   Collection @relation(fields: [collectionId], references: [id], onDelete: Cascade)
+}
+
+
+// for next13-dnd-form-builder project
+
+model Form {
+  id          Int      @id @default(autoincrement())
+  userId      String
+  createdAt   DateTime @default(now())
+  published   Boolean  @default(false)
+  name        String
+  description String   @default("")
+  content     String   @default("[]")
+
+  visits      Int @default(0)
+  submissions Int @default(0)
+
+  shareURL        String            @unique @default(uuid())
+  FormSubmissions FormSubmissions[]
+
+  @@unique([name, userId])
+}
+
+model FormSubmissions {
+  id        Int      @id @default(autoincrement())
+  createdAt DateTime @default(now())
+  formId    Int
+  form      Form     @relation(fields: [formId], references: [id])
+
+  content String
 }
